@@ -1,6 +1,6 @@
 
 
-  /* ===== Exemplo 1 ======
+  /* ===== JSX: Exemplo 1 ======
 function App() {  
   return (
     <>
@@ -12,21 +12,21 @@ function App() {
 } 
 ===== fim =====*/
 
-/* ===== Exemplo 2 =====
+/* ===== JSX: Exemplo 2 =====
 const App = () => {
   const nome = 'André';
   return <p>Nome: { nome }</p>;
 };
 ===== fim =====*/
 
-/* =====Exemplo 3 =====
+/* ===== JSX: Exemplo 3 =====
 const App = () => {
   const random = Math.random();
   return <p>Número aleatório {random * 10}</p>
 }
 ===== fim =====*/
 
-/* =====Exemplo 4 =====
+/* ===== JSX: Exemplo 4 =====
 const App = () => {
   const ativo = false;
   return (
@@ -35,7 +35,7 @@ const App = () => {
 }
 ===== fim =====*/
 
-/* =====Exemplo 5 =====
+/* ===== JSX: Exemplo 5 =====
 const titulo = <h1>Esse é um titulo</h1>
 const App = () => {
   return (
@@ -46,7 +46,7 @@ const App = () => {
 }
 ===== fim =====*/
 
-/* =====Exemplo 6 =====
+/* ===== JSX: Exemplo 6 =====
 const App = () => {
   const mostrarNome = (sobrenome) => {
     return 'André' + ' ' + sobrenome;
@@ -58,7 +58,7 @@ const App = () => {
 }
 ===== fim =====*/
 
-/* =====Exemplo 7 =====
+/* ===== JSX: Exemplo 7 =====
 const App = () => {
   return (
       <p>{new Date().getFullYear()}</p>
@@ -66,7 +66,7 @@ const App = () => {
 }
 ===== fim =====*/
 
-/* =====Exemplo 8 =====
+/* ===== JSX: Exemplo 8 =====
 const App = () => {
   const carro = {
     marca: 'Ford',
@@ -82,7 +82,7 @@ const App = () => {
 ===== fim =====*/
 
 
-/* =====Exemplo 9 =====
+/* ===== JSX: Exemplo 9 =====
 const App = () => {
   const estiloP = {
     color: "blue",
@@ -98,25 +98,24 @@ const App = () => {
 ===== fim =====*/
 
 
-  /* ===== EXERCÍCIO 1 =====
+  /* ===== JSX: EXERCÍCIO 1 =====
     // Mostre os dados da aplicação, como aprensetado no vídeo
     // Não utilize CSS externo, use o style para mudar as cores
     // Se a situação estiver ativa pinte de verde, inativa vermelho
     // Se o gasto for maior que 10000 mostre uma mensagem
 
-  ===== fim =====*/
-
-const luana = {
-  cliente: 'Luana',
-  idade: 27,
-  compras: [
-    {nome: 'Notebook', preco: 'R$ 2500'},
-    {nome: 'Geladeira', preco: 'R$ 3000'},
-    {nome: 'Smartphone', preco: 'R$ 1500'},
-  ],
-  ativa: true
-};
-
+    
+    const luana = {
+      cliente: 'Luana',
+      idade: 27,
+      compras: [
+        {nome: 'Notebook', preco: 'R$ 2500'},
+        {nome: 'Geladeira', preco: 'R$ 3000'},
+        {nome: 'Smartphone', preco: 'R$ 1500'},
+      ],
+      ativa: true
+    };
+    
 const mario = {
   cliente: 'Mario',
   idade: 31,
@@ -131,37 +130,90 @@ const mario = {
 
 const App = () => {
   const dados = mario;
-
+  
   const preçosEmNumeros = dados.compras.map(compra => Number(compra.preco.replace('R$ ', '')));
   const totalCompras = preçosEmNumeros.reduce((precoAnterior, precoAtual) => precoAnterior + precoAtual);
-
+  
   const estiloAtivo = {
     color: 'green',
     fontWeight: '700,'
   }
-
+  
   const estiloInativo = {
     color: 'red',
     fontWeight: '700,'
   }
-
+  
   return (
     <>
-      <p>Nome: {dados.cliente}</p>
-      <p>Idade: {dados.idade}</p>
-      <p>Situação: <span style={dados.ativa? estiloAtivo : estiloInativo}>{dados.ativa ? 'Ativa' : 'Inativa'}</span></p>
-      <p>Total gasto: R$ {totalCompras}</p>
-
-      {totalCompras > 10000 && <p>Você está gastando muito!</p>}
+    <p>Nome: {dados.cliente}</p>
+    <p>Idade: {dados.idade}</p>
+    <p>Situação: <span style={dados.ativa? estiloAtivo : estiloInativo}>{dados.ativa ? 'Ativa' : 'Inativa'}</span></p>
+    <p>Total gasto: R$ {totalCompras}</p>
+    
+    {totalCompras > 10000 && <p>Você está gastando muito!</p>}
     </>
+    )
+  }
+===== fim =====*/
+  
+
+/* ===== JSX Array: Exemplo 1 =====
+const App = () => {
+  //const produtos = ['Notebook', 'Tablet', 'Smartphone'];
+  const produtos = [
+    <li key="e1">Notebook</li>,
+    <li key="e2">Tablet</li>,
+    <li key="e3">Smartphone</li>
+  ]
+
+  return (
+    <div>{produtos}</div>
   )
 }
+===== fim =====*/
 
+/* ===== JSX Array: Exemplo 2 =====
+const App = () => {
+  const filmes = ['Before Sunrise', 'Before Sunset', 'Before Midnight', 'Novo Filme'];
 
+  return (
+    <ul>
+      {filmes.map(filme => <li key={filme}>{filme}</li>)}
+    </ul>
+  )
+}
+===== fim =====*/
+  
+const App = () => {
+  const livros = [
+    {nome: 'The Game of Thrones', ano: 1996},
+    {nome: 'The Clash of Kings', ano: 1998},
+    {nome: 'The Storm of Swords', ano: 2000},
+  ];
 
-
-
-  /* =====Exemplo  =====
+  return (
+    <ul>
+      {livros.filter(({ano}) => ano >= 1998).map(({nome, ano}) => <li key={nome}>{nome}, {ano}</li>)}
+    </ul>
+  )
+}
+  
+  
+  
+  /* ===== JSX Array Exemplo 3 =====
   ===== fim =====*/
 
-export default App;
+
+
+
+
+  
+  /* ===== Exemplo  =====
+  ===== fim =====*/
+  
+  /* ===== Exemplo  =====
+  ===== fim =====*/
+  
+  export default App;
+  
