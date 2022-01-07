@@ -82,6 +82,7 @@ const App = () => {
 ===== fim =====*/
 
 
+/* =====Exemplo 9 =====
 const App = () => {
   const estiloP = {
     color: "blue",
@@ -94,11 +95,72 @@ const App = () => {
     <p style={ estiloP }>Usando estilos como objeto</p>
   )
 }
+===== fim =====*/
 
-  /* =====Exemplo  =====
+
+  /* ===== EXERCÍCIO 1 =====
+    // Mostre os dados da aplicação, como aprensetado no vídeo
+    // Não utilize CSS externo, use o style para mudar as cores
+    // Se a situação estiver ativa pinte de verde, inativa vermelho
+    // Se o gasto for maior que 10000 mostre uma mensagem
+
   ===== fim =====*/
-  /* =====Exemplo  =====
-  ===== fim =====*/
+
+const luana = {
+  cliente: 'Luana',
+  idade: 27,
+  compras: [
+    {nome: 'Notebook', preco: 'R$ 2500'},
+    {nome: 'Geladeira', preco: 'R$ 3000'},
+    {nome: 'Smartphone', preco: 'R$ 1500'},
+  ],
+  ativa: true
+};
+
+const mario = {
+  cliente: 'Mario',
+  idade: 31,
+  compras: [
+    {nome: 'Notebook', preco: 'R$ 2500'},
+    {nome: 'Geladeira', preco: 'R$ 3000'},
+    {nome: 'Smartphone', preco: 'R$ 1500'},
+    {nome: 'Guitarra', preco: 'R$ 3500'},
+  ],
+  ativa: false
+}
+
+const App = () => {
+  const dados = mario;
+
+  const preçosEmNumeros = dados.compras.map(compra => Number(compra.preco.replace('R$ ', '')));
+  const totalCompras = preçosEmNumeros.reduce((precoAnterior, precoAtual) => precoAnterior + precoAtual);
+
+  const estiloAtivo = {
+    color: 'green',
+    fontWeight: '700,'
+  }
+
+  const estiloInativo = {
+    color: 'red',
+    fontWeight: '700,'
+  }
+
+  return (
+    <>
+      <p>Nome: {dados.cliente}</p>
+      <p>Idade: {dados.idade}</p>
+      <p>Situação: <span style={dados.ativa? estiloAtivo : estiloInativo}>{dados.ativa ? 'Ativa' : 'Inativa'}</span></p>
+      <p>Total gasto: R$ {totalCompras}</p>
+
+      {totalCompras > 10000 && <p>Você está gastando muito!</p>}
+    </>
+  )
+}
+
+
+
+
+
   /* =====Exemplo  =====
   ===== fim =====*/
 
