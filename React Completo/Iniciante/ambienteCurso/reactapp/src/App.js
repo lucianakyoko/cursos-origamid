@@ -1,6 +1,4 @@
-
-
-  /* ===== JSX: Exemplo 1 ======
+/* ===== JSX: Exemplo 1 ======
 function App() {  
   return (
     <>
@@ -204,12 +202,11 @@ const App = () => {
 /* ===== JSX Array: EXERCÍCIO 1  =====
   // Organize os produtos como mostrado no vídeo
   // Mostre apenas produtos que forem mais caros que R$ 1500
-===== fim =====*/
   
-const produtos = [
-  {
-    id: 1, 
-    nome: 'Smartphone',
+  const produtos = [
+    {
+      id: 1, 
+      nome: 'Smartphone',
     preco: 'R$ 2000',
     cores: ['#29d8d5', '#252a34', '#fc3766']
   },
@@ -230,33 +227,62 @@ const produtos = [
 const App = () => {
   const valorFiltro = 1500;
   const produtosFiltrados = produtos.filter(produto => Number(produto.preco.replace('R$ ', '')) > valorFiltro);
-
+  
   return (
     <section>
-      {produtosFiltrados.map(produto => (
-        <div key={produto.id}>
-          <h1>{produto.nome}</h1>
-          <p>Preço: {produto.preco}</p>
-          <ul>
-            {produto.cores.map(cor => (
-              <li key={cor} style={{ backgroundColor: cor, color: 'white', width: '150px' }}>
-                {cor}
-              </li>
-            ))}
-          </ul>
+    {produtosFiltrados.map(produto => (
+      <div key={produto.id}>
+      <h1>{produto.nome}</h1>
+      <p>Preço: {produto.preco}</p>
+      <ul>
+      {produto.cores.map(cor => (
+        <li key={cor} style={{ backgroundColor: cor, color: 'white', width: '150px' }}>
+        {cor}
+        </li>
+        ))}
+        </ul>
         </div>
-      ))}
-    </section>
+        ))}
+        </section>
+        )
+      }
+===== fim =====*/
+
+/* ===== Eventos Exemplo 1 =====
+const App = () => {
+  const handleClick = event => console.log(event.target);
+  
+  return (
+    <button onClick={ handleClick }>Clique</button>
+    )
+  }
+===== fim =====*/
+  
+
+const App = () => {
+  const handleScroll = event => {
+    console.log(event);
+  }
+
+  window.addEventListener('scroll', handleScroll);
+  return (
+    <div style={ {height: '200vh', backgroundColor: 'tomato'} }>
+      <button>
+        Compre violão
+      </button>
+    </div>
   )
 }
-
-
-
-
+/* ===== Eventos Exemplo 1 =====
+===== fim =====*/
+/* ===== Eventos Exemplo 1 =====
+===== fim =====*/
+/* ===== Eventos Exemplo 1 =====
+===== fim =====*/
+/* ===== Eventos Exemplo 1 =====
+===== fim =====*/
   
   
-  /* ===== Exemplo  =====
-  ===== fim =====*/
   
   export default App;
   
