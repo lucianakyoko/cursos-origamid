@@ -1,11 +1,22 @@
-import React from 'react'
+import React from 'react';
 
-const Button = () => {
+const Button = props => {
   return (
+
     <button>
-      enviar
+      Clique
     </button>
   )
 }
+
+
+
+
+
+
+
+
+
+
 
 export default Button

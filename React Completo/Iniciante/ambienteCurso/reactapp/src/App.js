@@ -301,6 +301,7 @@ const App = () => {
 }
 ===== fim =====*/
 
+/* =====  Componente Exemplo 2 =====
 import Form from "./form/Form";
 import Header from './Header';
 import Footer from './Footer';
@@ -314,17 +315,77 @@ const App = () => {
     </>
   )
 }
+===== fim =====*/
+
+/* =====  Propriedades Exemplo 1 =====
+import React from "react";
+
+const Titulo = (props) => {
+  return <h1 style={{color: props.cor}}>{props.texto}</h1>
+}
+
+const App = () => {
+  return (
+    <>
+      <Titulo cor="tomato" texto="Meu primeiro título"/>
+      <Titulo cor="darkred" texto="Meu segundo título"/>
+    </>
+  )
+}
+===== fim =====*/
+
+
+/* ===== Propriedades (com destructuring) Exemplo 2 =====
+import React from "react";
+
+const Titulo = ({texto, cor}) => {
+  return <h1 style={ {color: cor} }>{texto}</h1>
+}
+const App = ()=> {
+  return(
+    <>
+      <Titulo cor='blue' texto='Um novo título' />
+      <Titulo cor='yellow' texto='Outro título' />
+    </>
+  )
+}
+===== fim =====*/
+
+/* =====  Children Exemplo 1 =====
+import React from "react";
+
+const Titulo = ({ texto, cor, children }) => {
+  return <h1 style={{color: cor}}>{texto}, {children}</h1>;
+}
+
+const App = () => {
+  return (
+    <>
+      <Titulo cor='red' texto='Titulo 1'>
+        <p>Isto é um paragrafo</p>
+      </Titulo>
+    </>
+  )
+}
+===== fim =====*/
+
+
+import React from "react";
+import Form from "./form/Form";
+
+const App = () => {
+  return (
+    <>
+      <Form />
+    </>
+  )
+}
 
 
 
-/* =====  Componente Exemplo 2 =====
-===== fim =====*/
-/* =====  Exemplo 1 =====
-===== fim =====*/
-/* =====  Exemplo 1 =====
-===== fim =====*/
-/* =====  Exemplo 1 =====
-===== fim =====*/
+
+
+
 /* =====  Exemplo 1 =====
 ===== fim =====*/
 /* =====  Exemplo 1 =====
