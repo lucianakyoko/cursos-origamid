@@ -259,6 +259,7 @@ const App = () => {
 ===== fim =====*/
   
 
+/* ===== Eventos Exemplo 2 =====
 const App = () => {
   const handleScroll = event => {
     console.log(event);
@@ -273,13 +274,62 @@ const App = () => {
     </div>
   )
 }
-/* ===== Eventos Exemplo 1 =====
 ===== fim =====*/
-/* ===== Eventos Exemplo 1 =====
+
+/* ===== Compoentes Exemplo 1 =====
+import Header from './Header'
+const App = () => {
+  return(
+    <>
+      <Header />
+    </>
+  )
+}
 ===== fim =====*/
-/* ===== Eventos Exemplo 1 =====
+
+/* ===== Componente Exemplo 2 =====
+import Header from "./Header";
+import Footer from "./Footer";
+
+const App = () => {
+  return (
+    <>
+      <Header />
+      <Footer />
+    </>
+  )
+}
 ===== fim =====*/
-/* ===== Eventos Exemplo 1 =====
+
+import Form from "./form/Form";
+import Header from './Header';
+import Footer from './Footer';
+
+const App = () => {
+  return (
+    <>
+      <Header />
+      <Form />
+      <Footer />
+    </>
+  )
+}
+
+
+
+/* =====  Componente Exemplo 2 =====
+===== fim =====*/
+/* =====  Exemplo 1 =====
+===== fim =====*/
+/* =====  Exemplo 1 =====
+===== fim =====*/
+/* =====  Exemplo 1 =====
+===== fim =====*/
+/* =====  Exemplo 1 =====
+===== fim =====*/
+/* =====  Exemplo 1 =====
+===== fim =====*/
+/* =====  Exemplo 1 =====
 ===== fim =====*/
   
   
