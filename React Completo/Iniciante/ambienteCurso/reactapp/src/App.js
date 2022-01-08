@@ -10,6 +10,8 @@ function App() {
 } 
 ===== fim =====*/
 
+
+
 /* ===== JSX: Exemplo 2 =====
 const App = () => {
   const nome = 'André';
@@ -370,6 +372,7 @@ const App = () => {
 ===== fim =====*/
 
 
+/* =====  Props Exemplo 1 =====
 import React from "react";
 import Form from "./form/Form";
 
@@ -378,18 +381,42 @@ const App = () => {
     <>
       <Form />
     </>
+    )
+  }
+===== fim =====*/
+
+/* =====  DESAFIO COMPONENTES  =====
+// Replique a interface como a apresentada na aula
+// Utilize a array abaixo para mostrar os produtos
+// Quebre em componentes o que precisar ser reutilizado
+// Dica: const { pathname } = window.location; (puxa o caminho do URL)
+
+===== fim =====*/
+
+import React from "react";
+import Header from "./Header";
+import Home from "./Home";
+import Produtos from "./Produtos";
+
+
+const App = () => {
+  const { pathname } = window.location;
+  let Component;
+
+  if(pathname === '/produtos') {
+    Component = Produtos;
+  } else {
+    Component = Home;
+  }
+  return (
+    <section>
+      <Header />
+      <Component />
+    </section>
   )
 }
 
 
-
-
-
-
-/* =====  Exemplo 1 =====
-===== fim =====*/
-/* =====  Exemplo 1 =====
-===== fim =====*/
 /* =====  Exemplo 1 =====
 ===== fim =====*/
   
