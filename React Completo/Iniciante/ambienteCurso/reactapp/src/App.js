@@ -392,7 +392,6 @@ const App = () => {
 // Dica: const { pathname } = window.location; (puxa o caminho do URL)
 
 ===== fim =====*/
-
 import React from "react";
 import Header from "./Header";
 import Home from "./Home";
@@ -415,6 +414,7 @@ const App = () => {
     </section>
   )
 }
+
 
 
 /* =====  Exemplo 1 =====
