@@ -101,22 +101,53 @@ const App = () => {
 ===== FIM do exemplo ===== */
 
 
-/* ***** Class 0301 - useState - Exemplo 06 *****
+/* ***** Class 0301 - useState - Exemplo 06 PROPS *****
 Podemos passar o estado e a função de modificação como propriedades para outros elementos.
-===== FIM do exemplo ===== */
 import React from 'react';
 import ButtonModal from './ButtonModal';
 import Modal from './Modal';
 
-
-const App = () => {
-  const [modal, setModal] = React.useState(false);
-
-  return (
-    <div>
+  const App = () => {
+    const [modal, setModal] = React.useState(false);
+    
+    return (
+      <div>
       <div>{modal ? 'Modal aberto' : 'Modal fechado'}</div>
       <Modal modal={modal} setModal={setModal}/>
       <ButtonModal setModal={setModal}/>
+      </div>
+      )
+    }
+===== FIM do exemplo ===== */
+
+
+/* ***** Class 0301 - useState - Exemplo 07 - REATIVIDADE *****
+Não modifique o estado diretamente. Utilize sempre a função de atualização do estado, pois ela que garante a reatividade dos componentes.
+
+
+import React from 'react'
+
+const App = () => {
+  const [item, setItem] = React.useState('Teste');
+  const handleClick = () => {
+    setItem('outro');
+  }
+  return (
+    <div>
+    <p>{item}</p>
+    <button onClick={handleClick}>Clicar</button>
+    </div>
+    )
+  }
+===== FIM do exemplo ===== */
+
+import React from 'react'
+
+const App = () => {
+  
+  return (
+    <div>
+      
     </div>
   )
 }
@@ -128,21 +159,26 @@ const App = () => {
 
 
 
-
-
-
-
-
-
-
-
-
-/* ***** Class 0301 - useState - Exemplo 06 *****
+/* ***** Class 0301 - useState - Exemplo 08 CALLBACK *****
 
 ===== FIM do exemplo ===== */
-/* ***** Class 0301 - useState - Exemplo 06 *****
 
-===== FIM do exemplo ===== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ***** Class 0301 - useState - Exemplo 06 *****
 
 ===== FIM do exemplo ===== */
