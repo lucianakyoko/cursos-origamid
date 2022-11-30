@@ -3,6 +3,8 @@
 Links:
  - [slide do curso](https://origamid.com/slide/typescript-para-iniciantes);
 
+---
+
 ## Aula 01 - Introdução
 **Types** -> O tipo define o que podemos fazer com um dado.
 
@@ -31,3 +33,22 @@ Para usarmos o typescript, precisamos seguir os passos abaixo:
 }
  ```
  - rodar o comando ```tsc -w```, esse comando faz com que aconteça o hot reload
+
+---
+
+## Aula 02 - TypeScript Básico
+**Annotation** -> Com o TypeScript podemos indicar qual será o tipo de dado de uma variável através de anotações (: string).
+
+**Inference** -> O TS consegue inferir o tipo de dado de expressões em JavaScript. Sempre que ele conseguir inferir, você não precisa fazer a anotação do dado.
+
+**Funções** -> As anotações serão necessárias quando lidamos com funções. Funções podem receber parâmetros com diferentes tipos e também podem retornar diferentes tipos de dados.
+
+**string, number e boolean** -> string, number e boolean são tipos básicos do TypeScript (primitivos).
+
+**typeof** -> typeof é um operador de JavaScript que retorna uma string indicando o tipo do dado. Os possíveis valores retornados por typeof são: string, number, boolean, function, object, undefined, bigint e symbol. O typeof funciona como um type guard.
+
+**String, Number e Boolean** -> Não confundir string, number e boolean com String, Number e Boolean. Os últimos são as funções construtoras desses tipos de dados, responsáveis pela herança das propriedades e métodos dos mesmos.
+
+**Union Types** -> É comum termos funções que podem retornar ou receber tipos diferentes. Para isso usamos a barra vertical ```string | number | boolean```.
+
+**DOM** -> Funções que selecionam elementos do DOM geralmente retornam null como uma possibilidade de tipo, pois o TypeScript não tem acesso prévio ao DOM para saber se o elemento existe ou não.
