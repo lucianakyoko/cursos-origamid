@@ -52,3 +52,30 @@ Para usarmos o typescript, precisamos seguir os passos abaixo:
 **Union Types** -> É comum termos funções que podem retornar ou receber tipos diferentes. Para isso usamos a barra vertical ```string | number | boolean```.
 
 **DOM** -> Funções que selecionam elementos do DOM geralmente retornam null como uma possibilidade de tipo, pois o TypeScript não tem acesso prévio ao DOM para saber se o elemento existe ou não.
+
+**TypeScript Básico**
+-> Object: É possível definir a forma (shape) de um objeto usando uma sintaxe parecida com a de criação de objetos : {}
+
+-> Type: A palavra-chave type cria um atalho (alias) para um tipo customizado.
+
+-> Interface: interface geralmente da mesma forma que type, porém possui uma sintaxe diferente. As intefaces são geralmente utilizadas para definirmos objetos.
+A diferença será explorada em aulas mais avançadas. Por agora, vamos utilizar Type para tipos primitivos e Interface para objetos.
+
+--> Array: Uma array é definida com o tipo de dado(s) que ela possui, seguida por [];
+Existe uma sintaxe alternativa, onde usamos Array<type>. Sendo type o tipo de dado dentro da array.
+
+--> Any: O any indica que o dado pode conter qualquer tipo de dado do TypeScript. Devemos evitar ao máximo o uso do any, pois o mesmo remove todas as seguranças e conveniências que o TS fornece.
+
+--> Any Implicito: Fora do modo estrito, o TypeScript permitirá o uso de parâmetros sem especificarmos o tipo. Esses parâmetros terão o tipo implícito de any.
+
+--> Uso do Any: Em alguns casos o any faz sentido, como no caso da função json() onde qualquer tipo de dado pode ser retornado, dependendo da API que acessarmos.
+
+--> Any e Erros: Usar o any pode quebrar a sua aplicação.
+
+--> null: null é um tipo primitivo que representa a ausência de valor. É comum em funções do DOM que fazem uma busca, retornarem null quando não são bem sucedidas.
+
+--> undefined: undefined representa variáveis/propriedades que foram instanciadas, p                                                               orém, os seus valores ainda não foram definidos.
+
+--> Propriedades Opcionais: Podemos definir propriedades opcionais utilizando opcional?: string. Quando opcional, elas poderão sempre retornar como o valor definido ou undefined.
+
+--> strictNullChecks: Sem o strictNullChecks como true, o TypeScript assume que qualquer valor pode incluir null | undefined e consequentemente para de checar casos onde realmente o null | undefined podem ser retornados.
